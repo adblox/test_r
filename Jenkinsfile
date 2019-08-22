@@ -17,7 +17,7 @@ pipeline {
     }
     stage("Build CVE job"){
       steps {
-      build job: 'run_docker_image_cve_scan', parameters: [[$class: 'StringParameterValue', name: 'COMMIT_ID', value: params.COMMIT_ID]]
+        job: 'run_docker_image_cve_scan', parameters: [[$class: 'StringParameterValue', name: 'COMMIT_ID', value: params.COMMIT_ID]]
   }
     }
 } 
