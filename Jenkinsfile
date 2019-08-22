@@ -19,3 +19,4 @@ pipeline {
       build job: 'run_ngp_cve_scan_image', parameters: [[$class: 'StringParameterValue', name: 'COMMIT_ID', value: ${COMMIT_ID}]]
   }
 } 
+}
