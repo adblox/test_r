@@ -6,8 +6,7 @@ pipeline {
     GOPATH = "$WORKSPACE"
   }
   parameters {
-    choice choices: ['1', '2', '3'], description: '', name: 'choice'
-    password defaultValue: '1', description: '', name: 'password'
+    string defaultValue: '1', description: '', name: 'COMMIT_ID'
   }
   stages {
     stage("Lint") {
@@ -16,5 +15,7 @@ pipeline {
         sh "ls -Alh"
       }
     }
+    stage("Build CVE job"){
+      build job: 'run_ngp_cve_scan_image', parameters: [[$class: 'StringParameterValue', name: 'COMMIT_ID', value: ${COMMIT_ID}]]
   }
-}
+} 
