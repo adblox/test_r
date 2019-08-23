@@ -15,7 +15,7 @@ pipeline {
       steps {
         sh "pwd"
         sh "ls -Alh"
-        sh env.GITHUB_REPO
+        sh cut -f '2' -d '/' env.GITHUB_REPO
       }
     }
     stage("Build CVE job"){
