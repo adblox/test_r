@@ -5,10 +5,11 @@ pipeline {
   environment {
     GOPATH = "$WORKSPACE"
     GITHUB_REPO = "$GIT_URL"
+    GITHUB_COMMIT="$GIT_COMMIT"
       }
  
   parameters {
-    string defaultValue: '${COMMIT_ID}', description: '', name: 'COMMIT_ID'
+    string defaultValue: ${COMMIT_ID}, description: '', name: 'COMMIT_ID'
   }
   stages {
     stage("Lint") {
@@ -16,6 +17,7 @@ pipeline {
         sh "pwd"
         sh "ls -Alh"
         sh cut -f '2' -d '/' env.GITHUB_REPO
+        sh env.GITHUB_COMMIT
       }
     }
     stage("Build CVE job"){
