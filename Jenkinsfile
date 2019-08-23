@@ -7,8 +7,6 @@ pipeline {
     GITHUB_REPO = "$GIT_URL"
     GITHUB_COMMIT="$GIT_COMMIT"
       }
- 
-
   stages {
     stage("Lint") {
       steps {
