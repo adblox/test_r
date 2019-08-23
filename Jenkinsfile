@@ -8,7 +8,7 @@ pipeline {
       }
  
   parameters {
-    string defaultValue: '1', description: '', name: 'COMMIT_ID'
+    string defaultValue: '${COMMIT_ID}', description: '', name: 'COMMIT_ID'
   }
   stages {
     stage("Lint") {
