@@ -14,7 +14,7 @@ pipeline {
       steps {
         sh "pwd"
         sh "ls -Alh"
-        sh "cut -f '2' -d '/' env.GITHUB_REPO"
+        sh "cut -f '2' -d '/'" env.GITHUB_REPO
         sh env.GITHUB_COMMIT
       }
     }
