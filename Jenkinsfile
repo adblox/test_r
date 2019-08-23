@@ -8,9 +8,7 @@ pipeline {
     GITHUB_COMMIT="$GIT_COMMIT"
       }
  
-  parameters {
-    string defaultValue: ${COMMIT_ID}, description: '', name: 'COMMIT_ID'
-  }
+
   stages {
     stage("Lint") {
       steps {
