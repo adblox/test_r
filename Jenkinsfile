@@ -14,7 +14,7 @@ pipeline {
       steps {
         sh "pwd"
         sh "ls -Alh"
-        sh "basename "${env.GITHUB_REPO}" ".${env.GITHUB_REPO}%.*.}"
+        sh "echo '${GITHUB_REPO##*/}'"
         sh env.GITHUB_COMMIT
       }
     }
