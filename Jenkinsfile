@@ -3,7 +3,6 @@ pipeline {
     label 'master'
   }
   environment {
-    GOPATH = "$WORKSPACE"
     GITHUB_REPO = "$GIT_URL"
     GITHUB_COMMIT="$GIT_COMMIT"
       }
