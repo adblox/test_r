@@ -4,7 +4,9 @@ pipeline {
   }
   environment {
     GOPATH = "$WORKSPACE"
-  }
+    GITHUB_REPO = "$(basename "$GIT_URL" ".${GIT_URL%.*.}")"
+      }
+ 
   parameters {
     string defaultValue: '1', description: '', name: 'COMMIT_ID'
   }
@@ -13,6 +15,7 @@ pipeline {
       steps {
         sh "pwd"
         sh "ls -Alh"
+        sh env.GITHUB_REPO
       }
     }
     stage("Build CVE job"){
