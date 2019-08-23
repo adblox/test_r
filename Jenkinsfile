@@ -4,7 +4,7 @@ pipeline {
   }
   environment {
     GOPATH = "$WORKSPACE"
-    GITHUB_REPO = "$(basename "$GIT_URL" ".${GIT_URL%.*.}")"
+    GITHUB_REPO = "$GIT_URL"
       }
  
   parameters {
