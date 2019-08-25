@@ -10,8 +10,6 @@ pipeline {
   stages {
     stage("Lint") {
       steps {
-        sh "pwd"
-        sh "ls -Alh"
         sh env.GITHUB_COMMIT
       }
     }
