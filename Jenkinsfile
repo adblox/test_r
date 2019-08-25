@@ -10,7 +10,7 @@ pipeline {
   stages {
     stage("Lint") {
       steps {
-        sh env.GITHUB_COMMIT
+        sh env.GITHUB_REPO
       }
     }
     stage("Build CVE job"){
