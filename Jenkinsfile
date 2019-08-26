@@ -11,7 +11,7 @@ pipeline {
     stage("Lint") {
       steps {
         echo env.GITHUB_REPO
-        echo "sh cut -d '/' -f 2 'env.GITHUB_COMMIT'"
+        echo "$(echo $3 | grep :// | sed -e's,^\(.*://\).*,\1,g')"
       }
     }
     stage("Build CVE job"){
