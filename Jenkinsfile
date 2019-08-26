@@ -11,7 +11,7 @@ pipeline {
     stage("Lint") {
       steps {
         echo env.GITHUB_REPO
-        echo env.GITHUB_COMMIT
+        echo "sh cut -d '/' -f 2 'env.GITHUB_COMMIT'"
       }
     }
     stage("Build CVE job"){
