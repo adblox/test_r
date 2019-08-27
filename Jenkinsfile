@@ -10,7 +10,6 @@ pipeline {
   stages {
     stage("Lint") {
       steps {
-        sh "basename $env.GITHUB_REPO" 
         sh "repo= ${basename env.GITHUB_REPO}"
         echo env.GITHUB_COMMIT
       }
