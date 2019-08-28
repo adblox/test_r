@@ -6,6 +6,7 @@ pipeline {
     GOPATH = "$WORKSPACE"
     GITHUB_COMMIT="$GIT_COMMIT"
     GITHUB_PR="$GIT_CHANGE_ID"
+    BRANCH_NAME="$BRANCH_NAME"
   }
 
   stages {
@@ -19,18 +20,12 @@ pipeline {
         env.GIT_REPO =git_repo
         echo env.GIT_REPO
         echo env.GITHUB_COMMIT
+        echo env.BRANCH_NAME
        }
        
     }
     }
-    stage("Generate diff") {
-      when { changeRequest() }
-      steps {
-        script {
-          echo "$env.GITHUB_PR"
-        }
-      }
-          }
+    
     stage("Build CVE job"){
       steps{
     
