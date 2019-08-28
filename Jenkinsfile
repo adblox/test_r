@@ -18,10 +18,8 @@ pipeline {
         echo git_repo
         env.GIT_REPO =git_repo
         echo env.GIT_REPO
-      }
         echo env.GITHUB_COMMIT
-        echo env.GITHUB_CHANGE_ID
-      }
+       }
        
     }
     stage("Generate diff") {
