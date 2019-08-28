@@ -22,11 +22,12 @@ pipeline {
        }
        
     }
+    }
     stage("Generate diff") {
       when { changeRequest() }
       steps {
         script {
-          echo "$env.CHANGE_ID"
+          echo "$env.GITHUB_PR"
         }
       }
           }
