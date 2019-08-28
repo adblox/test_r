@@ -24,7 +24,7 @@ pipeline {
       }
        
     }
-    stage(Generate diff') {
+    stage("Generate diff") {
       when { changeRequest() }
       steps {
         script {
